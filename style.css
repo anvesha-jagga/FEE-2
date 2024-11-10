@@ -1,0 +1,575 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+
+}
+
+body {
+    background-color: #010302;
+    color: #eee;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    overflow-x: hidden;
+}
+
+/* Hide scrollbar */
+*::-webkit-scrollbar {
+    width: 0;
+}
+html {
+    scroll-behavior: smooth; 
+}
+
+
+/*................................................... N A V B A R ..................................................*/
+
+.navbar {
+    background-color: #333; 
+    padding: 10px 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1000;
+    opacity: 85%;
+}
+
+.leftnav {
+    display: flex;
+    align-items: center; 
+}
+
+.website-name {
+    color: white; 
+    font-size: 28px; 
+    margin-right: 20px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.website-name:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 17.5px #f0afaf;
+}
+
+.website-name a{
+text-decoration: none;
+color: white;
+}
+
+.nav-list {
+    display: flex; 
+    flex-grow: 1;
+    justify-content: flex-end; 
+    margin: 0; 
+    padding: 0; 
+    list-style-type: none; 
+}
+
+.nav-list li {
+    margin: 0 20px; 
+    position: relative;
+}
+
+.nav-list li a {
+    text-decoration: none; 
+    color: white; 
+    transition: color 0.3s, text-shadow 0.3s; 
+}
+
+.nav-list li a:hover {
+    text-shadow: 0 0 4px #ffffff; 
+}
+
+.nav-list li a::after {
+    content: ''; 
+    height: 2px; 
+    width: 0; 
+    background: white; 
+    transition: width 0.3s ease; 
+    position: absolute; 
+    bottom: -6px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.nav-list li a:hover::after {
+    width: 120%; 
+}
+
+.menu-toggle {
+    display: none; 
+    cursor: pointer; 
+    color: white; 
+    font-size: 24px; 
+}
+
+/* Responsive Styles for Navbar */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        background-color: #333; 
+        top: 50px; 
+        right: 0; 
+        width: 100%; 
+        padding: 15px 5px;
+        z-index: 1000; 
+        opacity: 80%;
+    }
+
+    .navbar.active .nav-list {
+        display: flex; 
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px; 
+        height: 20px; 
+        cursor: pointer; 
+    }
+    
+    .bar {
+        height: 2px; 
+        width: 90%; 
+        background-color: #ffffff; 
+    }
+
+    .nav-list li a::after {
+        width: 0; 
+    }
+
+    .nav-list li a:hover::after {
+        width: 100%; 
+        bottom: -1px; 
+    }
+}
+
+
+/*..................................................... B A N N E R ..................................................*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.container {
+    display: flex; 
+    flex-direction: column; 
+    overflow: visible; 
+}
+
+.banner {
+    height: 100vh; 
+    position: relative; 
+    overflow: hidden; 
+    z-index: 1; 
+}
+
+.banner .bg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; 
+    background-position: center bottom;
+    transition: transform 0.1s ease; 
+}
+
+/* Amsterdam banner */
+.ams .bg:nth-child(3) {
+    background-image: url(pictures/ams_1.png);
+    top: -0.1%;
+    transform: translateX(-1%) translateY(0.2);
+    z-index: 3;
+}
+
+.ams .bg:nth-child(2) {
+    top: 52%; 
+    text-align: center;
+    z-index: 2; 
+}
+
+.ams .bg:nth-child(2) h1,
+.ams .bg:nth-child(2) h4 {
+    color: #ffffff;
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 0 0 17.5px #000000;
+}
+
+.ams .bg:nth-child(2) h1 {
+    font-size: 11vw;
+}
+
+.ams .bg:nth-child(1) {
+    background-image: url(pictures/amsterdam_1.png);
+    z-index: 1;
+}
+
+/* Chicago banner */
+.chi .bg:nth-child(3) {
+    background-image: url(pictures/chi_1.png);
+    z-index: 3;
+}
+
+.chi .bg:nth-child(2) {
+    top: 53%; 
+    text-align: center;
+    z-index: 2; 
+}
+
+.chi .bg:nth-child(2) h1,
+.chi .bg:nth-child(2) h4 {
+    color: #ffffff;
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 0 0 17.5px #000000;
+}
+
+.chi .bg:nth-child(2) h1 {
+    font-size: 11vw;
+}
+
+.chi .bg:nth-child(1) {
+    background-image: url(pictures/chicago_1.png);
+    z-index: 1;
+}
+
+/* Dubai banner */
+.dub .bg:nth-child(3) {
+    background-image: url(pictures/dub_1.png);
+    z-index: 3;
+}
+
+.dub .bg:nth-child(2) {
+    top: 36%; 
+    text-align: center;
+    z-index: 2; 
+}
+
+.dub .bg:nth-child(2) h1,
+.dub .bg:nth-child(2) h4 {
+    color: #ffffff;
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 0 0 17.5px #666666;
+}
+
+.dub .bg:nth-child(2) h1 {
+    font-size: 11vw;
+}
+
+.dub .bg:nth-child(1) {
+    background-image: url(pictures/dubai.png);
+}
+
+/* France banner */
+.fra .bg:nth-child(3) {
+    background-image: url(pictures/fra_1.png);
+    z-index: 3;
+}
+
+.fra .bg:nth-child(2) {
+    top: 24%; 
+    text-align: center;
+    z-index: 2; 
+}
+
+.fra .bg:nth-child(2) h1,
+.fra .bg:nth-child(2) h4 {
+    color: #ffffff;
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 0 0 19px #666666;
+}
+
+.fra .bg:nth-child(2) h1 {
+    font-size: 11vw;
+}
+
+.fra .bg:nth-child(1) {
+    background-image: url(pictures/france.png);
+    z-index: 1;
+}
+
+/* London banner */
+.lon .bg:nth-child(3) {
+    background-image: url(pictures/lon_1.png);
+    z-index: 3;
+}
+
+.lon .bg:nth-child(2) {
+    top: 33%; 
+    text-align: center;
+    z-index: 2; 
+}
+
+.lon .bg:nth-child(2) h1,
+.lon .bg:nth-child(2) h4 {
+    color: #ffffff;
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 0 0 20px #666666;
+}
+
+.lon .bg:nth-child(2) h1 {
+    font-size: 11vw;
+}
+
+.lon .bg:nth-child(1) {
+    background-image: url(pictures/london.png);
+    z-index: 1;
+}
+
+/* New York banner */
+.new .bg:nth-child(3) {
+    background-image: url(pictures/new_1.png);
+    z-index: 3;
+}
+
+.new .bg:nth-child(2) {
+    text-align: center;
+    top: 20%;
+    margin-left: 41px;
+    z-index: 2; 
+}
+
+.new .bg:nth-child(2) h1,
+.new .bg:nth-child(2) h4 {
+    color: #ffffff;
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 0 0 17.5px #d8d8d8;
+}
+
+.new .bg:nth-child(2) h1 {
+    font-size: 11vw;
+}
+
+.new .bg:nth-child(1) {
+    background-image: url(pictures/new\ york.png);
+    z-index: 1;
+}
+
+/* Switzerland banner */
+.swit .bg:nth-child(3) {
+    background-image: url(pictures/swit_1.png);
+    z-index: 3;
+}
+
+.swit .bg:nth-child(2) {
+    top: 28%; 
+    text-align: center;
+    z-index: 2; 
+}
+
+.swit .bg:nth-child(2) h1,
+.swit .bg:nth-child(2) h4 {
+    color: #ffffff;
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 0 0 17.5px #d8d8d8;
+}
+
+.swit .bg:nth-child(2) h1 {
+    font-size: 11vw;
+}
+
+.swit .bg:nth-child(1) {
+    background-image: url(pictures/switzerland.png);
+    z-index: 1;
+}
+
+/* Sydney banner */
+.syd .bg:nth-child(3) {
+    background-image: url(pictures/syd_1.png);
+    z-index: 3;
+}
+
+.syd .bg:nth-child(2) {
+    top: 12%; 
+    text-align: center;
+    z-index: 2; 
+}
+
+.syd .bg:nth-child(2) h1,
+.syd .bg:nth-child(2) h4 {
+    color: #ffffff;
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 0 0 17.5px #d8d8d8;
+}
+
+.syd .bg:nth-child(2) h1 {
+    font-size: 11vw;
+}
+
+.syd .bg:nth-child(1) {
+    background-image: url(pictures/sydney.png);
+    z-index: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .banner {
+        height: 80vh; 
+    }
+
+    .banner .bg:nth-child(2) h1,
+    .banner .bg:nth-child(2) h4 {
+        font-size: 35px; 
+    }
+
+    .banner .bg:nth-child(2) h1 {
+        font-size: 10vw; 
+    }
+
+    .ams .bg:nth-child(2) {
+        top: 60%; /* Adjust for Amsterdam */
+    }
+
+    .chi .bg:nth-child(2) {
+        top: 65%; /* Adjust for Chicago */
+    }
+
+    .dub .bg:nth-child(2) {
+        top: 50%; /* Adjust for Dubai */
+    }
+
+    .fra .bg:nth-child(2) {
+        top: 38%; /* Adjust for France */
+    }
+
+    .lon .bg:nth-child(2) {
+        top: 46%; /* Adjust for London */
+    }
+
+    .new .bg:nth-child(2) {
+        top: 25%; /* Adjust for New York */
+    }
+
+    .swit .bg:nth-child(2) {
+        top: 43%; /* Adjust for Switzerland */
+    }
+
+    .syd .bg:nth-child(2) {
+        top: 35%; /* Adjust for Sydney */
+    }
+}
+
+
+/*TAB*/
+.tab {
+    min-height: 20vh; 
+    background-color: #010302; 
+    position: relative;
+    z-index: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    padding-top: 40px; 
+    transition: transform 0.3s ease; 
+}
+
+.tab::before {
+    position: absolute;
+    height: 90px; 
+    width: 100vw; 
+    background: linear-gradient(to top, rgba(1, 3, 2, 1), rgba(1, 3, 2, 0)); 
+    content: '';
+    bottom: 100%; 
+}
+
+
+.tab a {
+    display: inline-flex; 
+    align-items: center;
+    padding: 15px 30px; 
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0); 
+    text-decoration: none; 
+    border-radius: 25px; 
+    font-size: 20px; 
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5); 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    margin-top: 10px; /* Adjust space above the button */
+}
+
+.tab a:hover {
+    transform: scale(0.95); 
+    background-color: #434343; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); 
+    opacity: 0.8; 
+    border: 2px solid #ffffff; 
+    color: #ffffff;
+}
+
+.tab a:active {
+    transform: scale(0.95); 
+    background-color: #1a1a1a; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.tab a .material-icons {
+    margin-left: 8px; 
+    font-size: 20px; 
+    vertical-align: middle;
+}
+@media (max-width: 768px) {
+    .tab a {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+        font-size: 16px; /* Smaller font size */
+    }
+}
+
+/* ..........................................S I G N   U P ..............................*/
+.signup-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-section a {
+    text-decoration: none; 
+}
+
+.signup-section h2 {
+    font-size: 16px; 
+    color: #ffffff; 
+    padding: 10px 20px; 
+    background-color: #000000; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+}
+
+.signup-section h2:hover {
+    background-color: #ffffff;
+    opacity: 70%; 
+    color: #000000;
+}
+
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    border: black solid 2px;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  #scrollToTopBtn:hover {
+    background-color:#000000;
+    color: white;
+  }

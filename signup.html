@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./signup.css"></link>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- <div class="background-image">
+        <img src="./images/Home.png" alt="">
+    </div> -->
+    <div class="wrapper">
+        <form action="">
+            <h1>Sign-up</h1>
+           <div class="input-box">
+            <input type="text" placeholder="username" id="signup_username" required>
+            <i class='bx bxs-user'></i>
+           </div>
+
+           <div class="input-box">
+            <input type="email" placeholder="E-mail" id="signup_email" required>
+            <i class='bx bx-envelope'></i>
+           </div> 
+           <div class="input-box">
+            <input type="password" placeholder="password" id="signup_password" required>
+            <i class='bx bxs-lock-alt'></i>
+           </div>
+           <div class="input-box">
+            <input type="password" placeholder=" confirm password" id="signup_cpassword" required>
+            <i class='bx bxs-lock-alt'></i>
+           </div>
+           <div class="remember-forgot">
+            <label><input type="checkbox">Remember Me</label>
+            <a href="#">Forgot Password </a>
+           </div>  
+           <button id="signup_btn" type="submit"onclick="signup()" class="btn">Submit</button>
+           <div class="register-link">
+            <p>Already have a account ? <a href="./login.html">Login</a></p>
+           </div>
+        </form>
+    </div>
+    <script src="./signup.js"></script>
+</body>
+</html>

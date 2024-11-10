@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        *::-webkit-scrollbar{
+            width: 0;
+        }
+        body {
+            margin: 0; /* Remove default body margin */
+            padding-bottom: 80px; /* Space for the footer */
+            height: 100vh; /* Full height to allow fixed footer */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Push footer to the bottom */
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #282c34; /* Dark background color */
+            padding: 20px 0; /* Add padding for spacing */
+            color: #999; /* Default text color */
+            position: fixed; /* Fix footer to bottom */
+            bottom: 0; /* Position at the bottom */
+            left: 0; /* Align left */
+            right: 0; /* Align right */
+        }
+
+        .footer a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #999;
+            margin: 0 10px;
+            transition: color 0.3s; 
+        }
+
+        .footer a:hover {
+            color: #61dafb; 
+        }
+
+        .footer hr {
+            background: #999;
+            height: 1px; 
+            width: 100%; 
+            border: 0; 
+            margin: 20px 0; 
+        }
+
+        .footer p {
+            padding-bottom: 15px; 
+            margin: 0; 
+            color: #999; 
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <p>Discover your way around! This map is your guide to connect and meet us right here. Navigate to find your destination and join us on this journey!</p>
+        
+    </div>
+
+    <div style="flex-grow: 1;"></div> 
+    <div class="footer">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.snapchat.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-snapchat"></i></a>
+        <hr>
+        <p>Copyright &#169; 2024, Trekking Tales</p>
+    </div>
+
+</body>
+</html>
